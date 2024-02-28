@@ -25,4 +25,4 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
 
 
 'az group create --name devops-assign-rg --location centralindia'
-'az deployment group create -g devops-assign --template-file main.bicep'
+'az deployment group create -g central-india-RG --template-file PrivateEndPoint.bicep'
