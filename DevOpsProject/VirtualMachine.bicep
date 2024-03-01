@@ -12,7 +12,6 @@ param vnetSubnetName string = 'Subnet-1'
 param virtualMachines_machine_strorage_test_name string = 'machine-strorage-test'
 
 
-
 // Import the existing vnet and subnet to get the subnet id for deployment
 resource vnet 'Microsoft.Network/virtualNetworks@2022-11-01' existing = {
   name: vnetName
