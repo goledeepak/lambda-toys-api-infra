@@ -1,14 +1,4 @@
 param location string = 'centralindia'
-
-@description('Virtual Network resource group name')
-param vnetResourceGroupName string = 'central-india-RG'
-
-@description('Virtual Network name')
-param vnetName string = 'DevopsVNET'
-
-@description('Virtual Network subnet name')
-param vnetSubnetName string = 'Subnet-1'
-
 param principalId string = '9b5eb604-51fc-4c4f-a87a-af9e35e886c0'
 
 
@@ -35,8 +25,9 @@ resource keyVaultAdministratorRoleDefinition 'Microsoft.Authorization/roleDefini
   name: '00482a5a-887f-4fb3-b363-3b7fe8e74483'
 }
 
+
 resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  name: guid(resourceGroup().id, principalId, keyVaultAdministratorRoleDefinition.id)
+  name: guid(resourceGroup().id, principalId, keyVaultAdministratorRoleDefinition.id)  
   properties: {
     roleDefinitionId: keyVaultAdministratorRoleDefinition.id
     principalId: principalId

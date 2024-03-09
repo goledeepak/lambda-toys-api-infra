@@ -1,0 +1,6 @@
+
+https://www.calculator.net/ip-subnet-calculator.html?cclass=any&csubnet=26&cip=10.0.0.0&ctype=ipv4&x=Calculate
+
+az group create --name central-india-RG --location centralindia
+
+az deployment group create -g central-india-RG --template-file VnetWithSubnet.bicep
