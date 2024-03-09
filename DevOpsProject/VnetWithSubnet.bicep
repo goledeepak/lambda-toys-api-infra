@@ -116,3 +116,28 @@ resource securityGrp2 'Microsoft.Network/networkSecurityGroups@2023-09-01' = {
   }
 }
 
+
+resource storAcc 'Microsoft.Storage/storageAccounts@2023-01-01' = {
+  name: 'storageaccdevops1981'
+  location: location
+  sku: {
+    name: 'Standard_LRS'
+  }
+  kind: 'StorageV2'
+  properties: {
+    accessTier: 'Cool'
+    allowBlobPublicAccess: false
+    minimumTlsVersion: 'TLS1_2'
+    publicNetworkAccess: 'Enabled'
+    networkAcls: {
+      defaultAction:  'Deny'
+      bypass: 'None'
+      ipRules:[
+        {
+          value: '1.1.1.123'
+          action: 'Allow'
+        }
+      ]
+    }
+  }
+}
